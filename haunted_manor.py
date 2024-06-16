@@ -346,11 +346,3 @@ class Player:
 my_player = Player()
 my_player.player_name()
 my_player.intro()
-
-#player_name = Player.player_name(my_player)
-#start_game = Player.intro(my_player)
-
-###Testing working with classes###
-#attack = player.health_attack(my_player)
-#print(attack)
-#print(my_player.name)

@@ -4,26 +4,25 @@ NUM_PAIRS = 3
 TURNS = 6
 
 def main():
-    """
-    You should write your code here. Make sure to delete 
-    the 'pass' line before starting to write your own code.
-    """ 
+
     list = truth_list()
     shuffled = shuffle_list(list)
     display = displayed_list(shuffled)
 
-    #while "*" in display_list:
+    # Intro
     print(f"\nWelcome to the memory game! You will have {TURNS} turns to uncover {NUM_PAIRS} number matches and will use the index to uncover a value.")
     print("(index starts at 0)")
     print("\nLet's begin!\n")
+    # Display hidden list
     print(f"{display}\n") 
 
+    # If still have turn remaining
     for i in range(TURNS):
         if "*" in display:
             index_values = get_valid_index(display) 
             if checking_correct(index_values, shuffled, display):
                 return True
-    #if "*" in display_list:
+    #if "*" in display_list
     print("\nSorry, you have ran out of turns. You have lost!")
     return False
 
