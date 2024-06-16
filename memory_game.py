@@ -13,7 +13,7 @@ def main():
     display = displayed_list(shuffled)
 
     #while "*" in display_list:
-    print(f"\nWelcome to the memory game! You will have {TURNS} turns to uncover {NUM_PAIRS} number matches and will use the index value to uncover a value.")
+    print(f"\nWelcome to the memory game! You will have {TURNS} turns to uncover {NUM_PAIRS} number matches and will use the index to uncover a value.")
     print("(index starts at 0)")
     print("\nLet's begin!\n")
     print(f"{display}\n") 
@@ -58,19 +58,23 @@ def get_valid_index(display_list):
     numbers_picked = []
 
     while guesses < 2:
-        user_input = int(input("Enter an index: "))
+        try:
+            user_input = int(input("Enter an index: "))
 
-        if user_input >= 0 and user_input <= len(display_list)-1:
-            if display_list[user_input] == "*":
-                if user_input in numbers_picked:
-                    print("\nYou entered the same index twice. Try again.")
+            if user_input >= 0 and user_input <= len(display_list)-1:
+                if display_list[user_input] == "*":
+                    if user_input in numbers_picked:
+                        print("\nYou entered the same index twice. Try again.")
+                    else:
+                        numbers_picked.append(user_input)
+                        guesses += 1
                 else:
-                    numbers_picked.append(user_input)
-                    guesses += 1
-            else:
-                print("\nThis number has already been matched. Try again.")
-        else: 
-            print("\nNot a number. Try again.")
+                    print("\nThis number has already been matched. Try again.")
+            else: 
+                print("\nNot a valid index. Try again.")
+
+        except ValueError:
+            print("\nThat's not an number!")
         
     return numbers_picked
 

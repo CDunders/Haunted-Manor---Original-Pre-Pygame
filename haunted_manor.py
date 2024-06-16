@@ -18,7 +18,7 @@ class Player:
     @staticmethod # Instance data not required for this method
     def choice_validation():
         """Prompts the player to enter a choice and validates the input"""
-        choice = input("\nEnter th                                                                                                                                                          number of choice:\n > ")
+        choice = input("\nEnter the number of choice:\n > ")
         while choice != "1" and choice != "2":
             print("Please enter the number of your choice.")
             choice = input("\nEnter the number of choice:\n > ")
@@ -83,7 +83,8 @@ class Player:
 
     def intro(self):
         """Gives introduction and starts the game based on player's choice"""
-        print(f"\n{self.name}, you find yourself standing at the gate of a large and very old Manor, some people say it's haunted...")
+        print(f"\nWelcome {self.name}. You find yourself standing at the gate of a large and very old Manor, some people say it's haunted...")
+        sleep(2)
         print(f"\nAre you brave enough to enter the haunted manor?\n1.Yes\n2.No")
         # Check choice validation
         choice = self.choice_validation()
@@ -97,9 +98,9 @@ class Player:
     
     def garden(self):
         """Garden gameplay based on players choices (including possible attack by dog and finding a sword)"""
-        print("\nYou walk through the gate into the Manor grounds and towards the front door. You hear something....Growling!\n")
+        print("\nYou walk through the gate into the Manor grounds and towards the front door. Something glistening catches your eye but then you hear something....Growling!\n")
         sleep(2)
-        print(f"A huge snarling dog with bared teeth is running towards you! {self.name}, do you run for the house or back to the gate?\n1.House\n2.Gate")
+        print(f"A huge snarling dog with bared teeth is running towards you! {self.name}, do you run to the safety of the house or back to the gate?\n1.House\n2.Gate")
         # Check choice validation        
         choice = self.choice_validation()       
         if choice == "1":
@@ -170,7 +171,7 @@ class Player:
             if choice == "1":
                 print("\nIt's locked!\n") 
                 sleep(1)
-                print("You can see there is a keypad on the top with the numbers 0-5 and Play button. Next to the keypad is a display of 6 * symbols.")
+                print("You can see there is a keypad on the top with the numbers 0-5 and a Play button. Next to the keypad is a display of 6 * symbols.")
                 sleep(2)
                 print('Underneath the display of symbols it reads "Can you match the hidden numbers?"')
                 sleep(2)
